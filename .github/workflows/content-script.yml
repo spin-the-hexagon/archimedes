@@ -20,7 +20,5 @@ jobs:
         rust-version: nightly
     - name: Generate content
       run: cargo run --verbose
-    - uses: actions/upload-artifact@v4
-      with:
-        name: Content Script
-        path: output.txt
+    - name: Publish Release
+      run: gh release create Automatic ./output.xt
