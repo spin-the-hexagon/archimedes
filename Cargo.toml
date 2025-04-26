@@ -1,0 +1,10 @@
+[package]
+name = "project-adhd-data"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rosu-map = "0.1.2"
+eyre = "0.6.12"
+thiserror = "1.0.63"
+rayon = "1.10.0"
