@@ -22,4 +22,4 @@ jobs:
     - name: Generate content
       run: cargo run --verbose
     - name: Publish Release
-      run: gh release create Automatic ./output.xt
+      run: gh release create Automatic ./output.txt
