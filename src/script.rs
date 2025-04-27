@@ -2,6 +2,7 @@ use crate::lists::vec_to_string;
 use crate::script::ContentScriptOpcode::{
     AddMenuItem, BeatmapCollectionRegister, BeatmapModifier, BeatmapNote, OpcodeRegister,
 };
+use eyre::Result;
 
 pub enum ContentScriptOpcode {
     OpcodeRegister {
@@ -96,12 +97,13 @@ impl ScriptWriter {
             }
         }
     }
-    pub fn text(&self) -> String {
-        format!("V3{}", vec_to_string(self.segments.clone()))
+
+    pub fn text(&self) -> Result<String> {
+        Ok(format!("V3{}", vec_to_string(self.segments.clone())?))
     }
 }
 
-pub fn encode(opcodes: Vec<ContentScriptOpcode>) -> String {
+pub fn encode(opcodes: Vec<ContentScriptOpcode>) -> Result<String> {
     let mut writer = ScriptWriter::new();
 
     for opcode in opcodes {

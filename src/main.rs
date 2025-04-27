@@ -45,7 +45,7 @@ fn main() -> Result<()> {
         }
     }
 
-    write("./output.txt", output.text())?;
+    write("./output.txt", output.text()?)?;
 
     Ok(())
 }
@@ -141,7 +141,7 @@ fn load_osu(file: &DirEntry) -> Result<Song> {
 
     Ok(Song {
         name: file.path().file_stem().unwrap().display().to_string(),
-        script: writer.text(),
+        script: writer.text()?,
     })
 }
 
@@ -183,6 +183,6 @@ fn load_legacy_v2(file: &DirEntry) -> Result<Song> {
 
     Ok(Song {
         name: file.path().file_stem().unwrap().display().to_string(),
-        script: writer.text(),
+        script: writer.text()?,
     })
 }
