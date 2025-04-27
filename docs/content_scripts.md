@@ -3,7 +3,7 @@
 Content Scripts are the next-generation of all data in Project ADHD.
 
 > defining *content*
-> 
+>
 > content is:
 >   - saves
 >   - beatmaps
@@ -60,7 +60,7 @@ To load a save, you add the save to Content.ScriptQueue.
 To load all the games beatmaps into a table, add the table to Content.ScriptQueue.
 To load one beatmap, add the beatmap to Content.ScriptQueue.
 
-The one silly part about this is that a beatmap could theoretically mess with save data.
+The one silly part about this is that a beatmap could theoretically mess with game data.
 
 There is one last, super-simple part to the Content Script specification, which is that to make sure a user
 pasted in a Content Script, all Content Scripts start with `V3`
